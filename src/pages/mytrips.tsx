@@ -110,7 +110,7 @@ export function MyTrips() {
       )}
 
       {data.loading && (
-        <Box className="flex mx-auto h-screen items-center justify-center ml-64">
+        <Box className="flex mx-auto h-screen items-center justify-center md:ml-64 sm:ml-0">
           <CircularProgress />
         </Box>
       )}
