@@ -21,21 +21,22 @@ export function MyTrips() {
   const data = useAppSelector((state: RootState) => state.rooms);
 
   useEffect(() => {
-    !data.loaded &&  dispatch(fetchAllRooms());
+    !data.loaded && dispatch(fetchAllRooms());
   }, []);
 
   const selected = data.rooms[selectedIndex];
 
   return (
     <>
-    <Header title="My Trips"/>
+      <Header title="My Trips" />
 
       {!data.loading && (
         <div className="md:ml-64 sm:ml-0">
           <Box className="mx-4">
             <Tabs value={selectedIndex} onChange={(_, val) => setSelectedIndex(val)}>
-              <Tab label="WAYNE ROOM" value={0} />
-              <Tab label="DAVID ROOM" value={1} />
+              {data.tabs.map((tab, index) => {
+                return <Tab label={tab} value={index} />;
+              })}
             </Tabs>
           </Box>
 

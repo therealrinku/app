@@ -1,17 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TripDataModel } from '../../types';
+import { findTabs } from '../../utils';
 import { fetchRooms } from './service';
 
 export interface TripStateModel {
  rooms:TripDataModel[]
  loading:boolean;
  loaded:boolean;
+ tabs:Array<string>
 }
 
 const initialState: TripStateModel = {
  rooms:[],
  loading:true,
- loaded:false
+ loaded:false,
+ tabs:[]
 };
 
 export const fetchAllRooms = createAsyncThunk(
@@ -35,6 +38,7 @@ export const roomSlice = createSlice({
         state.loading = false
         state.rooms = action.payload;
         state.loaded=true
+        state.tabs=findTabs(action.payload)
       })
       .addCase(fetchAllRooms.rejected, (state) => {
         state.loading = false

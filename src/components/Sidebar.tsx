@@ -120,7 +120,13 @@ export function Sidebar() {
             <ListItem key={menu.title} disablePadding>
               <ListItemButton>
                 <ListItemIcon>{menu.icon}</ListItemIcon>
-                <ListItemText primary={<p className="text-sm">{menu.title}</p>} />
+                <ListItemText
+                  primary={
+                    <Link to={menu.link} className="text-sm">
+                      {menu.title}
+                    </Link>
+                  }
+                />
               </ListItemButton>
             </ListItem>
           );
