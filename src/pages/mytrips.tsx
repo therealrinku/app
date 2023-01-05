@@ -35,7 +35,7 @@ export function MyTrips() {
           <Box className="mx-4">
             <Tabs value={selectedIndex} onChange={(_, val) => setSelectedIndex(val)}>
               {data.tabs.map((tab, index) => {
-                return <Tab label={tab} value={index} />;
+                return <Tab label={tab} key={tab} value={index} />;
               })}
             </Tabs>
           </Box>
