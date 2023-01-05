@@ -75,7 +75,7 @@ export function Sidebar() {
       <List style={{ paddingLeft: "10px" }} className="relative flex items-center gap-4 h-16 text-white bg-[#04bcc4]">
         <img
           className="rounded-full h-10 w-10"
-          src="https://lh3.googleusercontent.com/ogw/AOh-ky3vwCr7Z5tkuLU4YMeDTC7KyyaoRZ5grWDDRbjNJA=s32-c-mo"
+          src="https://i.stack.imgur.com/34AD2.jpg"
         />
         <div>
           <p>
